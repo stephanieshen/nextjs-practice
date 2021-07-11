@@ -2,8 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Mulish', sans-serif;
+  background-color: #222831;
+  color: #ECECEC;
 }
 
 a {
@@ -13,4 +14,24 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('../public/assets/fonts/Mulish-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mulish-Bold';
+  src: url('../public/assets/fonts/Mulish-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mulish-SemiBold';
+  src: url('../public/assets/fonts/Mulish-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mulish-Light';
+  src: url('../public/assets/fonts/Mulish-Light.ttf') format('truetype');
 }
