@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Footer from '../../Footer/Footer';
 import Navigation from '../../Navigation/Navigation';
 
 const MainLayout = (props) => {
@@ -8,6 +9,7 @@ const MainLayout = (props) => {
       <main>
         {props.children}
       </main>
+      <Footer />
     </div>
   );
 }

@@ -5,15 +5,28 @@ import classes from './SocialLinks.module.scss';
 const SocialLinks = (props) => {
   return (
     <div className={classes.socialLinks}>
-      <Facebook className={classes.socialLink} style={{ color: props.color }} />
-      <LinkedIn className={classes.socialLink} style={{ color: props.color }} />
-      <Twitter className={classes.socialLink} style={{ color: props.color }} />
+      <Facebook
+        className={classes.socialLink}
+        fontSize={props.size}
+        style={{ color: props.color }}
+      />
+      <LinkedIn
+        className={classes.socialLink}
+        fontSize={props.size}
+        style={{ color: props.color }} 
+      />
+      <Twitter
+        className={classes.socialLink}
+        fontSize={props.size}
+        style={{ color: props.color }}
+      />
     </div>
   )
 }
 
 SocialLinks.propTypes = {
-  color: PropTypes.string
+  color: PropTypes.string,
+  size: PropTypes.string
 }
 
 export default SocialLinks;
