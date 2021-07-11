@@ -32,16 +32,4 @@
   font-size: 30px;
 }
 
-.social {
-  display: flex;
-  align-items: center;
-}
-
-.socialLink {
-  cursor: pointer;
-}
-
-.socialLink:not(:last-of-type) {
-  margin-right: 10px;
-}
 

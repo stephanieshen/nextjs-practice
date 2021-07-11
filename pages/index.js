@@ -1,5 +1,5 @@
-import { Facebook, LinkedIn, Twitter } from '@material-ui/icons';
 import Button from '../components/Button/Button';
+import SocialLinks from '../components/SocialLinks/SocialLinks';
 import classes from '../styles/Home.module.css';
 
 const Home = () => {
@@ -30,11 +30,7 @@ const Home = () => {
           </Button>
         </div>
 
-        <div className={classes.social}>
-          <Facebook className={classes.socialLink} />
-          <LinkedIn className={classes.socialLink} />
-          <Twitter className={classes.socialLink} />
-        </div>
+        <SocialLinks color="ECECEC" />
       </div>
     </div>
   )

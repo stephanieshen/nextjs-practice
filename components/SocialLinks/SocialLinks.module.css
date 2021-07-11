@@ -1,0 +1,12 @@
+.socialLinks {
+  display: flex;
+  align-items: center;
+}
+
+.socialLink {
+  cursor: pointer;
+}
+
+.socialLink:not(:last-of-type) {
+  margin-right: 15px;
+}
