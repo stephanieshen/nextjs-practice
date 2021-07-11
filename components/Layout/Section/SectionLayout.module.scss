@@ -1,0 +1,12 @@
+@import "styles/variables";
+
+.section {
+  padding: 4em 5em;
+
+  h1 {
+    color: $secondary;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 3em;
+  }
+}

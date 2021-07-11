@@ -1,21 +1,15 @@
 @import "styles/variables";
 @import "styles/mixins";
 
-.home {
-  height: calc(100vh - 70px);
-  min-height: 500px;
-  max-height: 768px;
-  position: relative;
+.header {
+  height: calc(768px - 70px);
+  display: flex;
+  align-items: center;
+  padding: 0 5em;
 }
 
 .greet {
   color: #03DAC6;
-}
-
-.header {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .info {

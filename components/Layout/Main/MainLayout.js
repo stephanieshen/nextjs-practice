@@ -1,8 +1,7 @@
-import classes from './Layout.module.scss';
 import PropTypes from 'prop-types';
-import Navigation from '../Navigation/Navigation';
+import Navigation from '../../Navigation/Navigation';
 
-const Layout = (props) => {
+const MainLayout = (props) => {
   return (
     <div>
       <Navigation />
@@ -13,8 +12,8 @@ const Layout = (props) => {
   );
 }
 
-Layout.propTypes = {
+MainLayout.propTypes = {
   children: PropTypes.node
 }
 
-export default Layout;
+export default MainLayout;
