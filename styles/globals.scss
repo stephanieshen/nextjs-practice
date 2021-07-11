@@ -20,6 +20,10 @@ a {
   margin: 0;
 }
 
+p {
+  line-height: 25px;
+}
+
 @font-face {
   font-family: 'Mulish';
   src: url('../public/assets/fonts/Mulish-Regular.ttf') format('truetype');

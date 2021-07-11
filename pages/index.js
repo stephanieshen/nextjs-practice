@@ -1,3 +1,4 @@
+import BlogOverview from '../components/BlogOverview/BlogOverview';
 import Button from '../components/Button/Button';
 import SectionLayout from '../components/Layout/Section/SectionLayout';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
@@ -40,7 +41,19 @@ const Home = () => {
         title="Blogs"
         bgColor="#1C2127"
       >
-        <p>Show blogs</p>
+        {[1, 2, 3].map((item, index) => (
+          <BlogOverview key={index} />
+        ))}
+
+        <div className={classes.moreBlogs}>
+          <Button
+            type="button"
+            classes={['primary']}
+            clicked={() => console.log('test')}
+          >
+            See more blogs
+          </Button>
+        </div>
       </SectionLayout>
     </>
   )
