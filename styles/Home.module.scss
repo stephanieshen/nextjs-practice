@@ -1,3 +1,6 @@
+@import "styles/variables";
+@import "styles/mixins";
+
 .home {
   height: calc(100vh - 70px);
   min-height: 500px;

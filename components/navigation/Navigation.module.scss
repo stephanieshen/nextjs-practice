@@ -1,3 +1,5 @@
+@import "styles/variables";
+
 .logo {
   width: 5rem;
 }
@@ -30,5 +32,5 @@
   transform: translateX(-50%);
   bottom: -15px;
   border-radius: 100%;
-  background-color: #03DAC6;
+  background-color: $secondary;
 }
