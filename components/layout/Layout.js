@@ -1,6 +1,6 @@
 import classes from './Layout.module.css';
 import PropTypes from 'prop-types';
-import Navigation from '../navigation/Navigation';
+import Navigation from '../Navigation/Navigation';
 
 const Layout = (props) => {
   return (
