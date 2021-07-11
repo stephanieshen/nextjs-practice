@@ -1,7 +1,7 @@
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import classes from './Navigation.module.css';
+import classes from './Navigation.module.scss';
 
 const Navigation = () => {
   const router = useRouter();

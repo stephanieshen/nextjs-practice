@@ -1,6 +1,6 @@
 import Button from '../components/Button/Button';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
-import classes from '../styles/Home.module.css';
+import classes from '../styles/Home.module.scss';
 
 const Home = () => {
   return (

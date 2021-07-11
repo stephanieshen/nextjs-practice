@@ -1,6 +1,6 @@
 import { Facebook, LinkedIn, Twitter } from '@material-ui/icons';
 import PropTypes from 'prop-types';
-import classes from './SocialLinks.module.css';
+import classes from './SocialLinks.module.scss';
 
 const SocialLinks = (props) => {
   return (

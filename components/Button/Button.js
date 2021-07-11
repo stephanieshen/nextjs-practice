@@ -1,4 +1,4 @@
-import classes from './Button.module.css';
+import classes from './Button.module.scss';
 import PropTypes from 'prop-types';
 
 const Button = (props) => {

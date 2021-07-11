@@ -1,4 +1,4 @@
-import classes from './Layout.module.css';
+import classes from './Layout.module.scss';
 import PropTypes from 'prop-types';
 import Navigation from '../Navigation/Navigation';
 
