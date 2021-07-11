@@ -1,6 +1,7 @@
 import BlogOverview from '../components/BlogOverview/BlogOverview';
 import Button from '../components/Button/Button';
 import SectionLayout from '../components/Layout/Section/SectionLayout';
+import Services from '../components/Services/Services';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
 import classes from '../styles/Home.module.scss';
 
@@ -54,6 +55,12 @@ const Home = () => {
             See more blogs
           </Button>
         </div>
+      </SectionLayout>
+
+      <SectionLayout
+        title="What I Can Offer"
+      >
+        <Services />
       </SectionLayout>
     </>
   )
