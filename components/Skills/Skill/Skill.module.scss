@@ -1,0 +1,27 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.skillName {
+  text-transform: uppercase;
+  width: 50%;
+  padding: 0 8em;
+  font-size: 1em;
+}
+
+.skillRate {
+  width: 50%;
+  height: .8em;
+  border-radius: 8px;
+
+  div {
+    background-color: $secondary;
+    height: 100%;
+    border-radius: 8px;
+  }
+}

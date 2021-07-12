@@ -1,0 +1,59 @@
+.col {
+  width: 50%;
+}
+
+.skillMeter {
+  display: flex;
+  margin: 7em 0 5em;
+}
+
+.meter {
+  border-top: 1px solid #ECECEC;
+  position: relative;
+}
+
+.line {
+  border-left: 1px solid #ECECEC;
+  height: 45px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &::before {
+    position: absolute;
+    top: -29px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    display: block;
+    width: 120px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.69315px;
+  }
+}
+
+.lineOne {
+  left: 0;
+
+  &::before {
+    content: 'WT* is this?';
+  }
+}
+
+.lineTwo {
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &::before {
+    content: 'Oh, I see';
+  }
+}
+
+.lineThree {
+  right: 0;
+
+  &::before {
+    content: 'Legend';
+  }
+}

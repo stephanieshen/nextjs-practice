@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import SectionLayout from '../../components/Layout/Section/SectionLayout';
+import Skills from '../../components/Skills/Skills';
 import WhatIDo from '../../components/WhatIDo/WhatIDo';
 import classes from './About.module.scss';
 
@@ -54,6 +55,13 @@ const About = () => {
           <WhatIDo />
         </div>
       </div>
+
+      <SectionLayout
+        title="Skills"
+        bgColor="#222831"
+      >
+        <Skills />
+      </SectionLayout>
     </>
   );
 }

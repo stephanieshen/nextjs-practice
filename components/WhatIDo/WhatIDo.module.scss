@@ -22,8 +22,5 @@
 
 .wrapper {
   text-align: center;
-
-  &:not(:last-of-type) {
-    margin-bottom: 85px;
-  }
+  margin-bottom: 85px;
 }
