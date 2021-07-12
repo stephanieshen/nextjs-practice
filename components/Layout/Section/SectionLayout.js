@@ -5,7 +5,10 @@ const SectionLayout = (props) => {
   return (
     <div
       className={classes.section}
-      style={{ backgroundColor: props.bgColor }}
+      style={{ 
+        backgroundColor: props.bgColor,
+        paddingBottom: props.paddingBottom
+      }}
     >
       <h1>{props.title}</h1>
       {props.children}
@@ -16,6 +19,7 @@ const SectionLayout = (props) => {
 SectionLayout.propTypes = {
   title: PropTypes.string,
   bgColor: PropTypes.string,
+  paddingBottom: PropTypes.string,
   children: PropTypes.node
 }
 

@@ -1,0 +1,29 @@
+.description {
+  margin-top: 27px;
+}
+
+.img {
+  width: 247px;
+  height: 227px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+
+  &:not(:last-of-type) {
+    margin-right: 50px;
+  }
+}
+
+.images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  text-align: center;
+
+  &:not(:last-of-type) {
+    margin-bottom: 85px;
+  }
+}

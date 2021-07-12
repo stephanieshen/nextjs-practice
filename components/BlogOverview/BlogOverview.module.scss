@@ -30,5 +30,13 @@
 
   &:nth-child(odd) {
     flex-direction: row-reverse;
+
+    .text {
+      padding-left: 25px;
+    }
+  }
+
+  .text {
+    padding-right: 25px;
   }
 }
