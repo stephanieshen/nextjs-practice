@@ -1,0 +1,23 @@
+.searchIcon {
+  position: absolute;
+  right: .5em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ECECEC;
+  padding: 1em;
+  width: 100%;
+  position: relative;
+  outline: none;
+  color: #ECECEC
+}
+
+.wrapper {
+  position: relative;
+  margin: 0 auto 2em;
+  max-width: 450px;
+}

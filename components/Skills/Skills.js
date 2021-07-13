@@ -11,10 +11,10 @@ const Skills = () => {
           <div key={index} className={classes.skills}>
             <h3>Web Development</h3>
             <div>
-              <Skill skill="React JS" rate="50" />
-              <Skill skill="Angular" rate="80" />
-              <Skill skill="Typescript" rate="70" />
-              <Skill skill="Redux" rate="55" />
+              <Skill skill="React JS" rate={50} />
+              <Skill skill="Angular" rate={80} />
+              <Skill skill="Typescript" rate={70} />
+              <Skill skill="Redux" rate={55} />
             </div>
           </div>
         ))}
