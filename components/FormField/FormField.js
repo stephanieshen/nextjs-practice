@@ -10,16 +10,13 @@ const FormField = (props) => {
       case 'text':
         return (
           <InputText
-            placeholder={props.label} 
-            changed={props.changed} 
-            value={props.value}
+            placeholder={props.label}
           />
         );
       case 'textarea':
         return (
           <Textarea
-            changed={props.changed} 
-            value={props.value}
+            placeholder={props.label}
           />
         );
     }
@@ -36,9 +33,7 @@ const FormField = (props) => {
 
 FormField.propTypes = {
   label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  changed: PropTypes.func,
-  value: PropTypes.string
+  type: PropTypes.string.isRequired
 }
 
 export default FormField;

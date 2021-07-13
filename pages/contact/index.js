@@ -15,19 +15,23 @@ const Contact = () => {
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.col}>
-        <h2>Let's Talk.</h2>
-        <div
-          className={classes.img}
-          style={{
-            backgroundImage: `url(${'https://i.stack.imgur.com/y9DpT.jpg'})`
-          }}
-        />
-        <SocialLinks color="ECECEC" />
-      </div>
+      <div className={classes.content}>
+        <div className={classes.col}>
+          <h2 className={classes.title}>
+            Let's Talk<span className={classes.dot}>&nbsp;.</span>
+          </h2>
+          <div
+            className={classes.img}
+            style={{
+              backgroundImage: 'url(assets/images/contact.gif)'
+            }}
+          />
+          <SocialLinks color="ECECEC" />
+        </div>
 
-      <div className={classes.col}>
-        <ContactForm />
+        <div className={classes.col}>
+          <ContactForm />
+        </div>
       </div>
     </div>
   );

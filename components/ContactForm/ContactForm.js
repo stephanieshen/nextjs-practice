@@ -1,15 +1,16 @@
+import Button from '../Button/Button';
 import FormField from '../FormField/FormField';
 import classes from './ContactForm.module.scss';
 
 const ContactForm = () => {
   return (
-    <div>
-      <p>
+    <div className={classes.wrapper}>
+      <p className={classes.description}>
         If you have anything that I can help you with, 
         please do leave me a message here...
       </p>
 
-      <div>
+      <div className={classes.formContainer}>
         <FormField
           name="name"
           label="Name"
@@ -25,6 +26,14 @@ const ContactForm = () => {
           label="Message"
           type="textarea"
         />
+
+        <Button
+          type="button"
+          classes={['primary']}
+          clicked={() => console.log('test')}
+        >
+          Send
+        </Button>
       </div>
     </div>
   )
