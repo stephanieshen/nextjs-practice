@@ -5,7 +5,11 @@
   height: calc(768px - 80px);
   display: flex;
   align-items: center;
-  padding: 0 8em;
+  padding: 0 2em;
+
+  @include respond-above(md) {
+    padding: 0 8em;
+  }
 }
 
 .greet {
@@ -27,11 +31,20 @@
 }
 
 .name {
-  font-size: 3em;
+  font-size: 36px;
+  line-height: 1.5;
+
+  @include respond-above(md) {
+    font-size: 3em;
+  }
 }
 
 .paragraph {
-  font-size: 30px;
+  font-size: 1.5em;
+
+  @include respond-above(md) {
+    font-size: 30px;
+  }
 }
 
 

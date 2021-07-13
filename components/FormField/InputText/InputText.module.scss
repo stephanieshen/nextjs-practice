@@ -2,9 +2,14 @@
   background: transparent;
   border: none;
   border-bottom: 1px solid #ECECEC;
-  padding: 1em;
+  padding: 1em 0;
   width: 100%;
   position: relative;
   outline: none;
-  color: #ECECEC
+  color: #ECECEC;
+
+  &::placeholder {
+    color: #ECECEC;
+    font-size: 1em;
+  }
 }

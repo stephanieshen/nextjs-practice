@@ -1,14 +1,26 @@
+@import "styles/variables";
+@import "styles/mixins";
+
 .services {
-  display: flex;
-  justify-content: space-evenly;
+  @include respond-above(md) {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 
 .service {
   text-align: center;
   max-width: 350px;
+  margin-bottom: 40px;
 
   &:not(:last-of-type) {
-    margin-right: 7em;
+    @include respond-above(md) {
+      margin-right: 7em;
+    }
+  }
+
+  @include respond-above(md) {
+    margin-bottom: 0;
   }
 
   img {

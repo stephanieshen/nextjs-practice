@@ -1,12 +1,18 @@
 @import "styles/variables";
+@import "styles/mixins";
 
 .section {
-  padding: 4em 8em;
+  padding: 4em 2em;
+
+  @include respond-above(md) {
+    padding: 4em 8em;
+  }
 
   h1 {
     color: $secondary;
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 2em;
+    font-size: 1.8em;
   }
 }
