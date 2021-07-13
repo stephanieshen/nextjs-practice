@@ -1,15 +1,21 @@
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Footer from '../../Footer/Footer';
 import Navigation from '../../Navigation/Navigation';
 
 const MainLayout = (props) => {
+  const router = useRouter();
+  const isContactPage = router.pathname.includes('contact');
+
   return (
     <div>
       <Navigation />
       <main>
         {props.children}
       </main>
-      <Footer />
+      {!isContactPage && (
+        <Footer />
+      )}
     </div>
   );
 }
