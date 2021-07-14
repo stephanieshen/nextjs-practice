@@ -1,23 +1,40 @@
+@import "styles/variables";
+@import "styles/mixins";
+
 .description {
   margin-top: 35px;
 }
 
 .img {
-  width: 247px;
+  width: 85%;
   height: 227px;
   background-size: cover;
   background-position: center;
   border-radius: 8px;
 
   &:not(:last-of-type) {
-    margin-right: 50px;
+    margin-bottom: 35px;
+
+    @include respond-above(md) {
+      margin-right: 50px;
+      margin-bottom: 0;
+    }
+  }
+
+  @include respond-above(md) {
+    width: 247px;
   }
 }
 
 .images {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include respond-above(md) {
+    flex-direction: unset;
+  }
 }
 
 .wrapper {

@@ -1,10 +1,22 @@
+@import "styles/variables";
+@import "styles/mixins";
+
 .col {
-  width: 50%;
+  width: 100%;
+
+  @include respond-above(md) {
+    width: 50%;
+  }
 }
 
 .skillMeter {
   display: flex;
+  flex-direction: column;
   margin: 7em 0 5em;
+
+  @include respond-above(md) {
+    flex-direction: unset;
+  }
 }
 
 .meter {
@@ -21,15 +33,21 @@
 
   &::before {
     position: absolute;
-    top: -29px;
+    top: -50px;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
+    transform: translateX(-50%) rotate(-90deg);
+    font-size: 7px;
     display: block;
     width: 120px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1.69315px;
+
+    @include respond-above(md) {
+      font-size: 12px;
+      top: -29px;
+      transform:  translateX(-50%);
+    }
   }
 }
 

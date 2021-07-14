@@ -3,21 +3,36 @@
 
 .wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 48px;
+
+  @include respond-above(md) {
+    flex-direction: unset;
+    align-items: center;
+  }
 }
 
 .skillName {
   text-transform: uppercase;
-  width: 50%;
-  padding: 0 8em;
+  padding: 0 0 2em 0;
+  width: 100%;
   font-size: 1em;
+
+  @include respond-above(md) {
+    width: 50%;
+    padding: 0 8em;
+  }
 }
 
 .skillRate {
-  width: 50%;
+  width: 100%;
   height: .8em;
   border-radius: 8px;
+
+  @include respond-above(md) {
+    width: 50%;
+  }
 
   div {
     background-color: $secondary;
