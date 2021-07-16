@@ -10,6 +10,10 @@
   @include respond-above(md) {
     padding: 0 8em;
   }
+
+  @include respond-above(hhg) {
+    padding: 0 300px;
+  }
 }
 
 .greet {

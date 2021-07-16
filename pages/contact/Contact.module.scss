@@ -57,4 +57,8 @@
     max-height: 768px;
     flex-direction: unset;
   }
+
+  @include respond-above(hhg) {
+    padding: 20px 300px;
+  }
 }

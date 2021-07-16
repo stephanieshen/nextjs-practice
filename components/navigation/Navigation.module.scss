@@ -37,6 +37,10 @@
   @include respond-above(md) {
     padding: 20px 8em;
   }
+
+  @include respond-above(hhg) {
+    padding: 20px 300px;
+  }
 }
 
 .navList {

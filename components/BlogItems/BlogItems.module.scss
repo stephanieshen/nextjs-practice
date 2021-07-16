@@ -19,5 +19,9 @@
     justify-content: space-between;
     flex-direction: unset;
   }
+
+  @include respond-above(hhg) {
+    padding: 0 300px;
+  }
 }
 

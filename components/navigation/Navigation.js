@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import classes from './Navigation.module.scss';
-import { AccountCircleOutlined, DescriptionOutlined, EmailOutlined, Home, HomeOutlined, Phone } from '@material-ui/icons';
+import { AccountCircleOutlined, DescriptionOutlined, EmailOutlined, HomeOutlined } from '@material-ui/icons';
 
 const Navigation = (props) => {
   const router = useRouter();
@@ -44,7 +44,10 @@ const Navigation = (props) => {
             </div>
           </Link>
         </li>
-        <li className={ isActiveRoute('/blogs') }>
+        <li className={
+          isActiveRoute('/blogs') ||
+          isActiveRoute('/blogs/[slug]') 
+        }>
           <Link href="/blogs">
             <div>
               <DescriptionOutlined className={classes.linkIcon} />

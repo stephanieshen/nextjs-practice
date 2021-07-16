@@ -8,12 +8,15 @@ import classes from './MainLayout.module.scss';
 const MainLayout = (props) => {
   const router = useRouter();
   const isContactPage = router.pathname.includes('contact');
+  const isAboutPage = router.pathname.includes('about');
+  const isBlogDetailsPage = router.pathname === '/blogs/[slug]';
 
   const getBgColor = () => {
-    const path = router.pathname;
-    if (path.includes('about') ||
-        isContactPage) {
-          return '#1C2127';
+    if (isAboutPage ||
+        isContactPage ||
+        isBlogDetailsPage
+    ) {
+        return '#1C2127';
     }
 
     return '#222831';

@@ -1,6 +1,13 @@
+import { useRouter } from 'next/dist/client/router';
 import classes from './BlogItem.module.scss';
 
 const BlogItem = () => {
+  const router = useRouter();
+
+  const showDetails = () => {
+    router.push(`/blogs/this-is-a-sample-blog`);
+  }
+
   return (
     <div className={classes.wrapper}>
       <div
@@ -8,6 +15,7 @@ const BlogItem = () => {
         style={{
           backgroundImage: `url(${'https://i.stack.imgur.com/y9DpT.jpg'})`
         }}
+        onClick={() => showDetails()}
       />
       <div className={classes.info}>
         <p className={classes.date}>

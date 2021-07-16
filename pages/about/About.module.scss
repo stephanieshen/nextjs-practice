@@ -8,6 +8,10 @@
     display: flex;
     align-items: center;
   }
+
+  @include respond-above(hhg) {
+    padding: 0 300px;
+  }
 }
 
 .headerContent {
