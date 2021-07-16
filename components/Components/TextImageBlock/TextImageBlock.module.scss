@@ -1,22 +1,37 @@
 @import "styles/variables";
 @import "styles/mixins";
 
-
 .img {
-  width: 40%;
+  width: 100%;
   min-height: 284px;
   max-height: 284px;
   background-size: cover;
   background-position: center;
   border-radius: 8px;
+  margin-bottom: 40px;
+
+  @include respond-above(md) {
+    width: 40%;
+    margin-bottom: 0;
+  }
 }
 
 .text {
-  width: 55%;
+  width: 100%;
+
+  @include respond-above(md) {
+    width: 55%;
+  }
 }
 
 .wrapper {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: $blockMarginBottom;
+  flex-direction: column-reverse;
+  margin-bottom: $blockMarginBottomMobile;
+
+  @include respond-above(md) {
+    flex-direction: unset;
+    justify-content: space-between;
+    margin-bottom: $blockMarginBottom;
+  }
 }

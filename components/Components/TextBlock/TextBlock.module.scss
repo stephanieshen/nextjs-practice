@@ -2,5 +2,9 @@
 @import "styles/mixins";
 
 .textBlock {
-  margin-bottom: $blockMarginBottom;
+  margin-bottom: $blockMarginBottomMobile;
+
+  @include respond-above(md) {
+    margin-bottom: $blockMarginBottom;
+  }
 }
