@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import classes from './FormField.module.scss';
+import InputFile from './InputFile/InputFile';
 import InputText from './InputText/InputText';
 import Textarea from './TextArea/TextArea';
 
@@ -22,6 +23,10 @@ const FormField = (props) => {
             placeholder={props.label}
           />
         );
+      case 'file':
+        return (
+          <InputFile />
+        );
     }
   }
 
@@ -35,8 +40,8 @@ const FormField = (props) => {
 }
 
 FormField.propTypes = {
-  label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
+  label: PropTypes.string
 }
 
 export default FormField;

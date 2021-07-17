@@ -27,7 +27,7 @@ const AdminNavigation = () => {
               </div>
             </Link>
           </li>
-          <li className={ isActiveRoute('/admin/manage-blogs') }>
+          <li className={ router.pathname.includes('manage-blogs') ? classes.active : '' }>
             <Link href="/admin/manage-blogs">
               <div className={classes.linkContent}>
                 <DescriptionOutlined />
