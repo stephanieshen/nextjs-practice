@@ -1,7 +1,6 @@
 import { useRouter } from 'next/dist/client/router';
-import Login from '../../../pages/admin/login';
 import Button from '../../Button/Button';
-import FormField from '../../FormField/FormField';
+import InputText from '../../FormField/InputText/InputText';
 import classes from './LoginForm.module.scss';
 
 const LoginForm = () => {
@@ -19,14 +18,14 @@ const LoginForm = () => {
       />
 
       <div>
-        <FormField
+        <InputText
           name="username"
-          label="Username"
+          placeholder="Username"
           type="text"
         />
-        <FormField
+        <InputText
           name="password"
-          label="Password"
+          placeholder="Password"
           type="password"
         />
         <Button

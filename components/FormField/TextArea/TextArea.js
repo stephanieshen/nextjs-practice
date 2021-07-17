@@ -4,6 +4,7 @@ import classes from './Textarea.module.scss';
 const Textarea = (props) => {
   return (
     <textarea
+      style={{ height: props.height }}
       placeholder={props.placeholder}
       className={classes.textArea} 
       rows={8}
@@ -12,7 +13,8 @@ const Textarea = (props) => {
 }
 
 Textarea.propTypes = {
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  height: PropTypes.string
 }
 
 export default Textarea;

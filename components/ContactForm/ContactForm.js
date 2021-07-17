@@ -1,5 +1,6 @@
 import Button from '../Button/Button';
-import FormField from '../FormField/FormField';
+import InputText from '../FormField/InputText/InputText';
+import Textarea from '../FormField/TextArea/TextArea';
 import classes from './ContactForm.module.scss';
 
 const ContactForm = () => {
@@ -11,20 +12,18 @@ const ContactForm = () => {
       </p>
 
       <div className={classes.formContainer}>
-        <FormField
+        <InputText
           name="name"
-          label="Name"
+          placeholder="Name"
           type="text"
         />
-        <FormField
+        <InputText
           name="email"
-          label="Email"
+          placeholder="Email"
           type="email"
         />
-        <FormField
-          name="message"
-          label="Message"
-          type="textarea"
+        <Textarea
+          placeholder="Message"
         />
 
         <Button
