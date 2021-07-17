@@ -1,8 +1,16 @@
+import { useRouter } from 'next/dist/client/router';
+import Login from '../../../pages/admin/login';
 import Button from '../../Button/Button';
 import FormField from '../../FormField/FormField';
-import classes from './Login.module.scss';
+import classes from './LoginForm.module.scss';
 
-const Login = () => {
+const LoginForm = () => {
+  const router = useRouter();
+
+  const login = () => {
+    router.replace('/admin/dashboard');
+  }
+
   return (
     <div className={classes.wrapper}>
       <img
@@ -25,7 +33,7 @@ const Login = () => {
           width={'100%'}
           type="button"
           classes={['primary']}
-          clicked={() => console.log('test')}
+          clicked={() => login()}
         >
           Login
         </Button>
@@ -34,4 +42,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default LoginForm;
