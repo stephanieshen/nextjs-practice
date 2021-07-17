@@ -1,8 +1,15 @@
 import { DashboardOutlined, DescriptionOutlined } from '@material-ui/icons';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import classes from './AdminNavigation.module.scss';
 
 const AdminNavigation = () => {
+  const router = useRouter();
+
+  const isActiveRoute = (path) => {
+    return router.pathname === path ? classes.active : '';
+  }
+
   return (
     <div className={classes.wrapper}>
       <nav>
@@ -12,16 +19,16 @@ const AdminNavigation = () => {
         />
 
         <ul className={classes.navList}>
-          <li>
-            <Link href="/admin">
+          <li className={ isActiveRoute('/admin/dashboard') }>
+            <Link href="/admin/dashboard">
               <div className={classes.linkContent}>
                 <DashboardOutlined />
                 <span>Dashboard</span>
               </div>
             </Link>
           </li>
-          <li>
-            <Link href="/">
+          <li className={ isActiveRoute('/admin/manage-blogs') }>
+            <Link href="/admin/manage-blogs">
               <div className={classes.linkContent}>
                 <DescriptionOutlined />
                 <span>Manage Blogs</span>
