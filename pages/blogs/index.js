@@ -25,7 +25,7 @@ const Blogs = () => {
         <BlogSearch />
       </SectionLayout>
 
-      <div>
+      <div className={classes.blogCards}>
         <BlogItems />
       </div>
 

@@ -1,3 +1,19 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.blogCards {
+  padding: 0 2em;
+  margin-top: -95px;
+
+  @include respond-above(md) {
+    padding: 0 8em 4em;
+  }
+
+  @include respond-above(hhg) {
+    padding: 0 300px;
+  }
+}
+
 .moreBlogs {
   text-align: center;
   margin-bottom: 7em;
