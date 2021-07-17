@@ -4,7 +4,7 @@ import classes from './InputText.module.scss';
 const InputText = (props) => {
   return (
     <input
-      type="text" 
+      type={props.type}
       placeholder={props.placeholder}
       className={classes.inputText}
     />
@@ -12,7 +12,8 @@ const InputText = (props) => {
 }
 
 InputText.propTypes = {
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  type: PropTypes.string
 }
 
 export default InputText;

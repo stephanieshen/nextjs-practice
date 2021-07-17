@@ -19,7 +19,7 @@ const ContactForm = () => {
         <FormField
           name="email"
           label="Email"
-          type="text"
+          type="email"
         />
         <FormField
           name="message"

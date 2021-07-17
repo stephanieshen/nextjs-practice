@@ -8,9 +8,12 @@ const FormField = (props) => {
   const field = (type) => {
     switch (type) {
       case 'text':
+      case 'email':
+      case 'password':
         return (
           <InputText
             placeholder={props.label}
+            type={props.type}
           />
         );
       case 'textarea':

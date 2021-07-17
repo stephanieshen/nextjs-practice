@@ -10,6 +10,7 @@ const Button = (props) => {
 
   return (
     <button
+      style={{ width: props.width }}
       type={props.type} 
       onClick={props.clicked} 
       className={`${classes.button} ${cNames}`}
@@ -23,7 +24,8 @@ Button.propTypes = {
   type: PropTypes.string.isRequired,
   children: PropTypes.node,
   clicked: PropTypes.func,
-  classes: PropTypes.array
+  classes: PropTypes.array,
+  width: PropTypes.string
 }
 
 export default Button;
