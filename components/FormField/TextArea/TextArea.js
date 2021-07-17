@@ -3,15 +3,11 @@ import classes from './Textarea.module.scss';
 
 const Textarea = (props) => {
   return (
-    <div>
-      <label className={classes.label}>
-        {props.placeholder}
-      </label>
-      <textarea
-        className={classes.textArea} 
-        rows={8}
-      />
-    </div>
+    <textarea
+      placeholder={props.placeholder}
+      className={classes.textArea} 
+      rows={8}
+    />
   )
 }
 
