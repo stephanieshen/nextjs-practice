@@ -4,7 +4,7 @@ import Textarea from "../../FormField/TextArea/TextArea";
 import classes from './TextImage.module.scss';
 
 const TextImage = () => {
-  const [image, setImage] = useState();
+  const [file, setFile] = useState();
 
   return (
     <div className={classes.wrapper}>
@@ -16,7 +16,7 @@ const TextImage = () => {
       </div>
       <div className={classes.col}>
         <InputFile
-          uploadHandler={(e) => setImage(e)}
+          fileHandler={(e) => setFile(e)}
         />
       </div>
     </div>

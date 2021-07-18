@@ -2,12 +2,12 @@ import { useState } from "react";
 import InputFile from "../../FormField/InputFile/InputFile";
 
 const Image = () => {
-  const [image, setImage] = useState();
+  const [file, setFile] = useState();
 
   return (
     <div>
       <InputFile
-        uploadHandler={(e) => setImage(e)}
+        fileHandler={(e) => setFile(e)}
       />
     </div>
   )

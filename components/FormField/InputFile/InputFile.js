@@ -1,8 +1,6 @@
-import { CloudUploadOutlined } from '@material-ui/icons';
+import { CloudUploadOutlined, RemoveCircle } from '@material-ui/icons';
 import React, { useRef, useState } from 'react';
-import uuid from 'react-uuid';
 import PropTypes from 'prop-types';
-import storage from '../../../firebase/firebase';
 import classes from './InputFile.module.scss';
 
 const InputFile = (props) => {
@@ -13,6 +11,17 @@ const InputFile = (props) => {
     fileInput?.current?.click();
   }
 
+  const showPreview = (file) => {
+    const reader = new FileReader();
+    reader.addEventListener('load', function () {
+      setPreview(reader.result);
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+
   const handleUpload = async (e) => {
     const file = e.target.files[0];
 
@@ -20,12 +29,13 @@ const InputFile = (props) => {
       return;
     }
 
-    const storageRef = storage.ref();
-    const fileRef = storageRef.child(`${uuid()}-${file.name}`);
-    const uploadTask = await fileRef.put(file);
-    const url = await uploadTask.ref.getDownloadURL();
-    props.uploadHandler(url);
-    setPreview(url);
+    showPreview(file);
+    props.fileHandler(file);
+  }
+
+  const removeImage = () => {
+    props.fileHandler(null);
+    setPreview(null);
   }
 
   return (
@@ -52,14 +62,19 @@ const InputFile = (props) => {
           style={{
             backgroundImage: `url(${preview})`
           }}
-        />
+        >
+          <RemoveCircle
+            className={classes.removeIcon}
+            onClick={removeImage}
+          />
+        </div>
       )}
     </div>
   )
 }
 
 InputFile.propTypes = {
-  uploadHandler: PropTypes.func.isRequired
+  fileHandler: PropTypes.func.isRequired
 }
 
 export default InputFile;
