@@ -39,7 +39,7 @@ const InputFile = (props) => {
   }
 
   return (
-    <div>
+    <div className={classes.wrapper}>
       {!preview ? (
         <>
           <button 
