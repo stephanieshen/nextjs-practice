@@ -5,6 +5,7 @@ const Text = () => {
     <div>
       <Textarea
         placeholder="Description"
+        height="300px"
       />
     </div>
   )
