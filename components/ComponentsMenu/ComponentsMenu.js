@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { AddCircle } from '@material-ui/icons';
 import classes from './ComponentsMenu.module.scss';
+import { ComponentType } from '../../shared/enums/component-type.enum';
 
-const ComponentsMenu = () => {
+const ComponentsMenu = (props) => {
+  const { selectHandler } = props;
   const [anchorEl, setAnchorEl] = useState(null);
 
   const openMenu = (e) => {
@@ -13,7 +16,12 @@ const ComponentsMenu = () => {
 
   const closeMenu = () => {
     setAnchorEl(null);
-  };    
+  };
+
+  const selectComponent = (type) => {
+    selectHandler(type);
+    closeMenu();
+  }
 
   return (
     <div>
@@ -29,21 +37,33 @@ const ComponentsMenu = () => {
         open={Boolean(anchorEl)}
         onClose={closeMenu}
       >
-        <MenuItem>
+        <MenuItem
+          onClick={() => selectComponent(ComponentType.TEXT)}
+        >
           Text
         </MenuItem>
-        <MenuItem>
+        <MenuItem
+          onClick={() => selectComponent(ComponentType.TEXT_IMAGE)}
+        >
           Text-Image
         </MenuItem>
-        <MenuItem>
+        <MenuItem
+          onClick={() => selectComponent(ComponentType.IMAGE_TEXT)}
+        >
           Image-Text
         </MenuItem>
-        <MenuItem>
+        <MenuItem
+          onClick={() => selectComponent(ComponentType.IMAGE)}
+        >
           Image
         </MenuItem>
       </Menu>
     </div>
   )
+}
+
+ComponentsMenu.propTypes = {
+  selectHandler: PropTypes.func
 }
 
 export default ComponentsMenu;
