@@ -9,18 +9,9 @@ const ImageText = () => {
   return (
     <div className={classes.wrapper}>
       <div className={classes.col}>
-        {!image ? (
-          <InputFile
-            uploadHandler={(e) => setImage(e)}
-          />
-        ) : (
-          <div
-            className={classes.img}
-            style={{
-              backgroundImage: `url(${image})`
-            }}
-          />
-        )}
+        <InputFile
+          uploadHandler={(e) => setImage(e)}
+        />
       </div>
       <div className={classes.col}>
         <Textarea

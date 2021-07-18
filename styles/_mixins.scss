@@ -21,10 +21,3 @@ $breakpoints: (
         }
 	}
 }
-
-@mixin previewImage {
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-  width: 100%;
-}

@@ -1,12 +1,5 @@
-@import "styles/variables";
-@import "styles/mixins";
-
 .col {
   width: 48%;
-}
-
-.img {
-  @include previewImage;
 }
 
 .wrapper {
