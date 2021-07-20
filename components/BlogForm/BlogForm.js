@@ -11,9 +11,8 @@ import Text from '../FormBuilder/Text/Text';
 const BlogForm = (props) => {
   const { form, components } = props;
 
-  console.log(components);
   const onFinish = (values) => {
-    console.log('here', values)
+    props.add(values, components);
   }
 
   const renderTextField = (component, index) => {
@@ -134,7 +133,6 @@ const BlogForm = (props) => {
         <Button
           type="submit"
           classes={['primary']}
-          clicked={() => console.log('test')}
         >
           Save
         </Button>
@@ -145,7 +143,8 @@ const BlogForm = (props) => {
 
 BlogForm.propTypes = {
   form: PropTypes.any,
-  components: PropTypes.array
+  components: PropTypes.array,
+  add: PropTypes.func
 }
 
 export default BlogForm;

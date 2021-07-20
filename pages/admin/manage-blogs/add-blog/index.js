@@ -16,11 +16,15 @@ const AddBlog = () => {
         name: `${type}[${allComponents.length}]`,
         value: null,
         imageUrl: null,
-        position: null
+        position: allComponents.length
       }
     }
     allComponents.push(newComponent);
     setComponents(allComponents);
+  }
+
+  const addBlog = (formValues, components) => {
+    console.log(formValues, components);
   }
 
   return (
@@ -28,6 +32,7 @@ const AddBlog = () => {
       <BlogForm
         form={form}
         components={components}
+        add={addBlog}
       />
 
       <ComponentsMenu
