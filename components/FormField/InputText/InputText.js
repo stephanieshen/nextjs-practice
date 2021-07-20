@@ -7,13 +7,15 @@ const InputText = (props) => {
       type={props.type}
       placeholder={props.placeholder}
       className={classes.inputText}
+      onChange={(e) => props.changed(e)}
     />
   )
 }
 
 InputText.propTypes = {
   placeholder: PropTypes.string,
-  type: PropTypes.string
+  type: PropTypes.string,
+  changed: PropTypes.func
 }
 
 export default InputText;

@@ -1,16 +1,19 @@
-import { useState } from "react";
+import PropTypes from 'prop-types';
 import InputFile from "../../FormField/InputFile/InputFile";
 
-const Image = () => {
-  const [file, setFile] = useState();
+const Image = (props) => {
 
   return (
     <div>
       <InputFile
-        fileHandler={(e) => setFile(e)}
+        fileHandler={props.changed}
       />
     </div>
   )
+}
+
+Image.propTypes = {
+  changed: PropTypes.func
 }
 
 export default Image;
