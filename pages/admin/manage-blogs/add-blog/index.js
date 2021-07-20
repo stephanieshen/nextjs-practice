@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { cloneDeep } from 'lodash';
+import { useDispatch } from 'react-redux';
 import { Form } from 'antd';
 import ComponentsMenu from '../../../../components/ComponentsMenu/ComponentsMenu';
 import BlogForm from '../../../../components/BlogForm/BlogForm';
+import { addBlog } from '../../../../store/Blog/blog-actions';
 
 const AddBlog = () => {
+  const dispatch = useDispatch();
   const [components, setComponents] = useState([]);
   const [form] = Form.useForm();
 
@@ -23,8 +26,14 @@ const AddBlog = () => {
     setComponents(allComponents);
   }
 
-  const addBlog = (formValues, components) => {
-    console.log(formValues, components);
+  const add = (formValues, components) => {
+    const blogData = {
+      headerImage: formValues.headerImage,
+      title: formValues.title,
+      components: components
+    }
+
+    dispatch(addBlog(blogData));
   }
 
   return (
@@ -32,7 +41,7 @@ const AddBlog = () => {
       <BlogForm
         form={form}
         components={components}
-        add={addBlog}
+        add={add}
       />
 
       <ComponentsMenu

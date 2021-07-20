@@ -37,7 +37,7 @@ const BlogForm = (props) => {
         <ImageText
           placeholder="Description"
           changed={(e) => {
-            if (e.target && e.target.value) {
+            if (e && e.target && e.target.value) {
               component.fields.value = e.target.value;
             } else {
               component.fields.imageUrl = e;
@@ -57,7 +57,7 @@ const BlogForm = (props) => {
         <TextImage
           placeholder="Description"
           changed={(e) => {
-            if (e.target && e.target.value) {
+            if (e && e.target && e.target.value) {
               component.fields.value = e.target.value;
             } else {
               component.fields.imageUrl = e;

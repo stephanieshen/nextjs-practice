@@ -6,7 +6,7 @@ const Image = (props) => {
   return (
     <div>
       <InputFile
-        fileHandler={props.changed}
+        uploadHandler={props.changed}
       />
     </div>
   )

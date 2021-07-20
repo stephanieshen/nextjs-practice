@@ -1,7 +1,9 @@
-import { CloudUploadOutlined, RemoveCircle } from '@material-ui/icons';
 import React, { useRef, useState } from 'react';
+import uuid from 'react-uuid';
+import { CloudUploadOutlined, RemoveCircle } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 import classes from './InputFile.module.scss';
+import storage from '../../../firebase/firebase';
 
 const InputFile = (props) => {
   const fileInput = useRef(null);
@@ -29,12 +31,16 @@ const InputFile = (props) => {
       return;
     }
 
-    showPreview(file);
-    props.fileHandler(file);
+    const storageRef = storage.ref();
+    const fileRef = storageRef.child(`${uuid()}-${file.name}`);
+    const uploadTask = await fileRef.put(file);
+    const url = await uploadTask.ref.getDownloadURL();
+    setPreview(url);
+    props.uploadHandler(url);
   }
 
   const removeImage = () => {
-    props.fileHandler(null);
+    props.uploadHandler(null);
     setPreview(null);
   }
 
@@ -74,7 +80,7 @@ const InputFile = (props) => {
 }
 
 InputFile.propTypes = {
-  fileHandler: PropTypes.func.isRequired
+  uploadHandler: PropTypes.func.isRequired
 }
 
 export default InputFile;

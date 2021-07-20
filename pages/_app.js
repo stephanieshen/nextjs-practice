@@ -1,7 +1,9 @@
 
 import { useRouter } from 'next/router'
+import { Provider } from 'react-redux';
 import AdminLayout from '../components/Layout/Admin/AdminLayout';
 import MainLayout from '../components/Layout/Main/MainLayout'
+import { store } from '../store';
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
@@ -10,9 +12,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {router.pathname.includes('admin') ? (
-        <AdminLayout>
-          <Component {...pageProps} />
-        </AdminLayout>
+        <Provider store={store}>
+          <AdminLayout>
+            <Component {...pageProps} />
+          </AdminLayout>
+        </Provider>
       ) : (
         <MainLayout>
           <Component {...pageProps} />

@@ -9,7 +9,7 @@ const ImageText = (props) => {
     <div className={classes.wrapper}>
       <div className={classes.col}>
         <InputFile
-          fileHandler={props.changed}
+          uploadHandler={props.changed}
         />
       </div>
       <div className={classes.col}>

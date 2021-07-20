@@ -16,7 +16,7 @@ const TextImage = (props) => {
       </div>
       <div className={classes.col}>
         <InputFile
-          fileHandler={props.changed}
+          uploadHandler={props.changed}
         />
       </div>
     </div>
