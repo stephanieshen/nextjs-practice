@@ -11,8 +11,8 @@ const Home = (props) => {
   const { blogs } = props;
   const router = useRouter();
 
-  const goToBlogs = () => {
-    router.push('/blogs');
+  const goTo = (path) => {
+    router.push(path);
   }
 
   return (
@@ -37,7 +37,7 @@ const Home = (props) => {
             <Button
               type="button"
               classes={['primary']}
-              clicked={() => console.log('test')}
+              clicked={() => goTo('/about')}
             >
               Know More
             </Button>
@@ -59,7 +59,7 @@ const Home = (props) => {
           <Button
             type="button"
             classes={['primary']}
-            clicked={goToBlogs}
+            clicked={() => goTo('/blogs')}
           >
             See more blogs
           </Button>
