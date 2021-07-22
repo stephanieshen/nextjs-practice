@@ -21,11 +21,13 @@ const Navigation = (props) => {
         backgroundColor: props.bgColor
       }}
     >
-      <Image
-        className={classes.logo}
-        src={logo}
-        alt="logo"
-      />
+      <div className={classes.logoWrapper}>
+        <Image
+          className={classes.logo}
+          src={logo}
+          alt="logo"
+        />
+      </div>
       <ul className={classes.navList}>
         <li className={ isActiveRoute('/') }>
           <Link href="/" passHref>
