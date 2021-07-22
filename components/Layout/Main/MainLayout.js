@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Footer from '../../Footer/Footer';
-import Navigation from '../../Nav/Navigation';
+import Navigation from '../../Navigation/Navigation';
 import classes from './MainLayout.module.scss';
 
 const MainLayout = (props) => {
