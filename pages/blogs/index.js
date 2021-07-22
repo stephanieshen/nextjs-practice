@@ -5,7 +5,7 @@ import BlogSearch from '../../components/BlogSearch/BlogSearch';
 import SectionLayout from '../../components/Layout/Section/SectionLayout';
 import { getBlogs } from '../../firebase';
 import classes from './Blogs.module.scss';
-import Seo from '../../components/SEO/Seo';
+import Seo from '../../components/Seo/Seo';
 
 const Blogs = (props) => {
   const [filteredBlogs, setFilteredBlogs] = useState([]);

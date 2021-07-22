@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import SocialLinks from '../../components/SocialLinks/SocialLinks';
 import classes from './Contact.module.scss';
-import Seo from '../../components/SEO/Seo';
+import Seo from '../../components/Seo/Seo';
 
 const Contact = () => {
 

@@ -2,7 +2,7 @@ import { useRouter } from 'next/dist/client/router';
 import BlogOverview from '../components/BlogOverview/BlogOverview';
 import Button from '../components/Button/Button';
 import SectionLayout from '../components/Layout/Section/SectionLayout';
-import Seo from '../components/SEO/Seo';
+import Seo from '../components/Seo/Seo';
 import Services from '../components/Services/Services';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
 import { getBlogs } from '../firebase';

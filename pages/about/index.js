@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import SectionLayout from '../../components/Layout/Section/SectionLayout';
-import Seo from '../../components/SEO/Seo';
+import Seo from '../../components/Seo/Seo';
 import Skills from '../../components/Skills/Skills';
 import WhatIDo from '../../components/WhatIDo/WhatIDo';
 import { getAboutMe } from '../../firebase';
