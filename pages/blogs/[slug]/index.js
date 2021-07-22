@@ -8,7 +8,7 @@ import { getBlogBySlug, getBlogs } from '../../../firebase';
 import { formatDate, toSlug } from '../../../helpers';
 import { ComponentType } from '../../../shared/enums/component-type.enum';
 import classes from './BlogDetails.module.scss';
-import Seo from '../../../components/SEO/Seo';
+import Seo from '../../../components/Seo/Seo';
 
 const BlogDetails = (props) => {
   const { blogData } = props;
