@@ -1,10 +1,13 @@
+import Image from 'next/image';
 import classes from './Services.module.scss';
+import webDesignImg from '../../public/assets/images/web-design.gif';
+import webDevImg from '../../public/assets/images/web-dev.gif';
 
 const Services = () => {
   return (
     <div className={classes.services}>
       <div className={classes.service}>
-        <img src="/assets/images/web-design.gif" />
+        <Image src={webDesignImg} alt="web-design" />
         <h4>
           Web Design
         </h4>
@@ -15,7 +18,7 @@ const Services = () => {
         </p>
       </div>
       <div className={classes.service}>
-        <img src="/assets/images/web-dev.gif" />
+        <Image src={webDevImg} alt="web-dev" />
         <h4>
           Web Development
         </h4>
@@ -26,7 +29,7 @@ const Services = () => {
         </p>
       </div>
       <div className={classes.service}>
-        <img src="/assets/images/web-design.gif" />
+        <Image src={webDesignImg} alt="mobile-dev" />
         <h4>
           Web Design
         </h4>

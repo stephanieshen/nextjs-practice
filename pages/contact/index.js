@@ -18,7 +18,7 @@ const Contact = () => {
       <div className={classes.content}>
         <div className={classes.col}>
           <h2 className={classes.title}>
-            Let's Talk<span className={classes.dot}>&nbsp;.</span>
+            Let &apos;s Talk<span className={classes.dot}>&nbsp;.</span>
           </h2>
           <div
             className={classes.img}

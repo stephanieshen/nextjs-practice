@@ -23,7 +23,7 @@ const Home = (props) => {
             Hello!
           </p>
           <h1 className={classes.name}>
-            I'm Juan Dela Cruz
+            I &apos;m Juan Dela Cruz
           </h1>
           <p className={classes.paragraph}>
             Software Engineer

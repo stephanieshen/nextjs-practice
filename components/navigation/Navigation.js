@@ -1,9 +1,11 @@
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image';
 import PropTypes from 'prop-types';
 import classes from './Navigation.module.scss';
 import { AccountCircleOutlined, DescriptionOutlined, EmailOutlined, HomeOutlined } from '@material-ui/icons';
+import logo from '../../public/assets/images/logo.png';
 
 const Navigation = (props) => {
   const router = useRouter();
@@ -19,13 +21,14 @@ const Navigation = (props) => {
         backgroundColor: props.bgColor
       }}
     >
-      <img
+      <Image
         className={classes.logo}
-        src src="/assets/images/logo.png"
+        src={logo}
+        alt="logo"
       />
       <ul className={classes.navList}>
         <li className={ isActiveRoute('/') }>
-          <Link href="/">
+          <Link href="/" passHref>
             <div>
               <HomeOutlined className={classes.linkIcon} />
               <span className={classes.linkText}>
@@ -35,7 +38,7 @@ const Navigation = (props) => {
           </Link>
         </li>
         <li className={ isActiveRoute('/about') }>
-          <Link href="/about">
+          <Link href="/about" passHref>
             <div>
               <AccountCircleOutlined className={classes.linkIcon} />
               <span className={classes.linkText}>
@@ -48,7 +51,7 @@ const Navigation = (props) => {
           isActiveRoute('/blogs') ||
           isActiveRoute('/blogs/[slug]') 
         }>
-          <Link href="/blogs">
+          <Link href="/blogs" passHref>
             <div>
               <DescriptionOutlined className={classes.linkIcon} />
               <span className={classes.linkText}>
@@ -58,7 +61,7 @@ const Navigation = (props) => {
           </Link>
         </li>
         <li className={ isActiveRoute('/contact') }>
-          <Link href="/contact">
+          <Link href="/contact" passHref>
             <div>
               <EmailOutlined className={classes.linkIcon} />
               <span className={classes.linkText}>
