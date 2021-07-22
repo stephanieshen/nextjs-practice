@@ -1,4 +1,3 @@
-import { route } from 'next/dist/next-server/server/router';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Footer from '../../Footer/Footer';
