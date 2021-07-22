@@ -16,7 +16,7 @@ const Textarea = (props) => {
 Textarea.propTypes = {
   placeholder: PropTypes.string,
   height: PropTypes.string,
-  onChangedHandler: PropTypes.fun
+  onChangedHandler: PropTypes.func
 }
 
 export default Textarea;

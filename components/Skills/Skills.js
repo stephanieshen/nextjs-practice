@@ -1,26 +1,34 @@
+import PropTypes from 'prop-types';
 import Skill from './Skill/Skill';
 import SkillMeter from './SkillMeter/SkillMeter';
 import classes from './Skills.module.scss';
 
-const Skills = () => {
+const Skills = (props) => {
   return (
     <>
       <SkillMeter />
       <div>
-        {[1, 2, 3].map((item, index) => (
+        {props.skills.map((skill, index) => (
           <div key={index} className={classes.skills}>
-            <h3>Web Development</h3>
+            <h3>{skill.category}</h3>
             <div>
-              <Skill skill="React JS" rate={50} />
-              <Skill skill="Angular" rate={80} />
-              <Skill skill="Typescript" rate={70} />
-              <Skill skill="Redux" rate={55} />
+              {skill.items.map((item, itemIndex) => (
+                <Skill
+                  key={itemIndex}
+                  skill={item.skill}
+                  rate={item.rate}
+                />
+              ))}
             </div>
           </div>
         ))}
       </div>
     </>
   )
+}
+
+Skills.propTypes = {
+  skills: PropTypes.array
 }
 
 export default Skills;

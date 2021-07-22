@@ -1,11 +1,20 @@
+import { useRouter } from 'next/dist/client/router';
 import BlogOverview from '../components/BlogOverview/BlogOverview';
 import Button from '../components/Button/Button';
 import SectionLayout from '../components/Layout/Section/SectionLayout';
 import Services from '../components/Services/Services';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
+import { getBlogs } from '../firebase';
 import classes from '../styles/Home.module.scss';
 
-const Home = () => {
+const Home = (props) => {
+  const { blogs } = props;
+  const router = useRouter();
+
+  const goToBlogs = () => {
+    router.push('/blogs');
+  }
+
   return (
     <>
       <div className={classes.header}>
@@ -42,15 +51,15 @@ const Home = () => {
         title="Blogs"
         bgColor="#1C2127"
       >
-        {[1, 2, 3].map((item, index) => (
-          <BlogOverview key={index} />
+        {blogs.map((blog, index) => (
+          <BlogOverview blog={blog} key={index} />
         ))}
 
         <div className={classes.moreBlogs}>
           <Button
             type="button"
             classes={['primary']}
-            clicked={() => console.log('test')}
+            clicked={goToBlogs}
           >
             See more blogs
           </Button>
@@ -64,6 +73,17 @@ const Home = () => {
       </SectionLayout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const res = await getBlogs();
+  const blogs = await res.json();
+
+  return {
+    props: {
+      blogs: blogs.splice(0, 3)
+    }
+  }
 }
 
 export default Home;

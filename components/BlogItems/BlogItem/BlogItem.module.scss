@@ -9,7 +9,11 @@
 }
 
 .description {
-  font-size: 1.1em;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 5px;
+  opacity: .8;
+  @include overflowEllipsis;
 }
 
 .edit,
@@ -37,4 +41,15 @@
   top: .5em;
   right: .5em;
   color: $secondary;
+}
+
+.title {
+  font-size: 1.1em;
+}
+
+.wrapper {
+  @include respond-above(lg) {
+    min-height: 410px;
+    max-height: 410px;
+  }
 }

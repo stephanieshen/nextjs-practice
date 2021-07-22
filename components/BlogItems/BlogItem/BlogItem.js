@@ -1,26 +1,15 @@
-import { useState } from 'react';
+
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/dist/client/router';
-import { Delete, Edit, MoreVert } from '@material-ui/icons';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import classes from './BlogItem.module.scss';
+import { formatDate, toSlug } from '../../../helpers';
 
 const BlogItem = (props) => {
+  const { blog } = props;
   const router = useRouter();
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const openMenu = (e) => {
-    e.stopPropagation();
-    setAnchorEl(e.currentTarget);
-  }
-
-  const closeMenu = () => {
-      setAnchorEl(null);
-  };    
-
+  
   const showDetails = () => {
-    router.push(`/blogs/this-is-a-sample-blog`);
+    router.push(`/blogs/${toSlug(blog.title)}`);
   }
 
   return (
@@ -28,49 +17,27 @@ const BlogItem = (props) => {
       <div
         className={classes.img}
         style={{
-          backgroundImage: `url(${'https://i.stack.imgur.com/y9DpT.jpg'})`
+          backgroundImage: `url(${blog.headerImage})`
         }}
         onClick={() => showDetails()}
-      >
-        {props.isEditable && (
-          <MoreVert
-            className={classes.menu}
-            onClick={openMenu}
-          />
-        )}
-      </div>
+      />
       <div className={classes.info}>
         <p className={classes.date}>
-          Feb 25, 2020
+          {formatDate(blog.datePublished)}
+        </p>
+        <p className={classes.title}>
+          {blog.title} 
         </p>
         <p className={classes.description}>
-          Far far away, behind the word mountains, 
-          far from the countries Vokalia and Consonantia
+          {blog.excerpt}
         </p>
       </div>
-
-      <Menu
-        id="simple-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={closeMenu}
-      >
-        <MenuItem>
-          <Edit fontSize='small' />
-          <span className={classes.edit}>Edit</span>
-        </MenuItem>
-        <MenuItem>
-          <Delete fontSize='small' />
-          <span className={classes.delete}>Delete</span>
-        </MenuItem>
-      </Menu>
     </div>
   )
 }
 
 BlogItem.propTypes = {
-  isEditable: PropTypes.bool
+  blog: PropTypes.object
 }
 
 export default BlogItem;

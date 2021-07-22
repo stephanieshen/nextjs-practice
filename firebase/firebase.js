@@ -20,5 +20,4 @@ if (!firebase.apps.length) {
 
 const storage = firebase.storage();
 
-export const endpoint = 'https://juand-fe279-default-rtdb.asia-southeast1.firebasedatabase.app/';
 export default storage;

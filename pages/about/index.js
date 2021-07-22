@@ -2,9 +2,11 @@ import { useEffect } from 'react';
 import SectionLayout from '../../components/Layout/Section/SectionLayout';
 import Skills from '../../components/Skills/Skills';
 import WhatIDo from '../../components/WhatIDo/WhatIDo';
+import { getAboutMe } from '../../firebase';
 import classes from './About.module.scss';
 
-const About = () => {
+const About = (props) => {
+  const { aboutMe } = props;
   
   useEffect(() => {
     document.body.style.backgroundColor = '#1C2127';
@@ -50,9 +52,12 @@ const About = () => {
           </p>
         </SectionLayout>
         <div className={classes.whatIDoWrapper}>
-          <WhatIDo />
-          <WhatIDo />
-          <WhatIDo />
+          {aboutMe.whatIDo.map((whatIDo, index) => (
+            <WhatIDo
+              key={index}
+              whatIDo={whatIDo}
+            />
+          ))}
         </div>
       </div>
 
@@ -60,10 +65,21 @@ const About = () => {
         title="Skills"
         bgColor="#222831"
       >
-        <Skills />
+        <Skills skills={aboutMe.skills} />
       </SectionLayout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const res = await getAboutMe();
+  const aboutMeData = await res.json();
+
+  return {
+    props: {
+      aboutMe: aboutMeData
+    }
+  }
 }
 
 export default About;

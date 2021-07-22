@@ -1,32 +1,36 @@
+import PropTypes from 'prop-types';
+import { formatDate } from '../../helpers';
 import classes from './BlogOverview.module.scss';
 
-const BlogOverview = () => {
+const BlogOverview = (props) => {
+  const { blog } = props;
+
   return (
     <div className={classes.wrapper}>
       <div className={classes.text}>
         <h4>
-          NextJs Dashboard
+          {blog.title}
         </h4>
         <p>
-          NextJs, ReactJs, GraphQL
+          {formatDate(blog.datePublished)}
         </p>
         <p className={classes.description}>
-          Far far away, behind the word mountains, far 
-          from the countries Vokalia and Consonantia, 
-          there live the blind texts. Far far away, behind the 
-          word mountains, far from the countries Vokalia 
-          and Consonantia, there live the blind texts.
+          {blog.excerpt}
         </p>
       </div>
 
       <div
         className={classes.img}
         style={{
-          backgroundImage: `url(${'https://i.stack.imgur.com/y9DpT.jpg'})`
+          backgroundImage: `url(${blog.headerImage})`
         }}
       />
     </div>
   )
+}
+
+BlogOverview.propTypes = {
+  blog: PropTypes.object
 }
 
 export default BlogOverview;

@@ -5,9 +5,9 @@ import classes from './BlogItems.module.scss';
 const BlogItems = (props) => {
   return (
     <div className={classes.wrapper}>
-      {[1, 2, 3, 4, 5, 6].map((item, index) => (
+      {props.blogs.map((blog, index) => (
         <div className={classes.item} key={index}>
-          <BlogItem isEditable={props.itemsEditable} />
+          <BlogItem blog={blog} />
         </div>
       ))}
     </div>
@@ -15,7 +15,7 @@ const BlogItems = (props) => {
 }
 
 BlogItems.propTypes = {
-  itemsEditable: PropTypes.bool
+  blogs: PropTypes.array
 }
 
 export default BlogItems;
