@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import classes from './Textarea.module.scss';
+import classes from './TextArea.module.scss';
 
 const Textarea = (props) => {
   return (
