@@ -8,6 +8,7 @@ import { getBlogBySlug, getBlogs } from '../../../firebase';
 import { formatDate, toSlug } from '../../../helpers';
 import { ComponentType } from '../../../shared/enums/component-type.enum';
 import classes from './BlogDetails.module.scss';
+import Seo from '../../../components/SEO/Seo';
 
 const BlogDetails = (props) => {
   const { blogData } = props;
@@ -35,18 +36,17 @@ const BlogDetails = (props) => {
     }
   }
 
+  const getSeoData = () => {
+    return {
+      title: blogData.title,
+      description: blogData.excerpt,
+      image: blogData.headerImage
+    }
+  }
+
   return (
     <>
-      <Head>
-        <title>{blogData.title}</title>
-        <meta name="description" content={blogData.excerpt} />
-        <meta property="og:title" content={blogData.title} />
-        <meta property="og:description" content={blogData.excerpt} />
-        <meta property="og:image" content={blogData.headerImage} />
-        <meta name="twitter:title" content={blogData.title} />
-        <meta name="twitter:description" content={blogData.excerpt} />
-        <meta name="twitter:image" content={blogData.headerImage} />
-      </Head>
+      <Seo data={getSeoData()} />
       <div
         className={classes.headerImg}
         style={{

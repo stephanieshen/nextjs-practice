@@ -5,6 +5,7 @@ import BlogSearch from '../../components/BlogSearch/BlogSearch';
 import SectionLayout from '../../components/Layout/Section/SectionLayout';
 import { getBlogs } from '../../firebase';
 import classes from './Blogs.module.scss';
+import Seo from '../../components/SEO/Seo';
 
 const Blogs = (props) => {
   const [filteredBlogs, setFilteredBlogs] = useState([]);
@@ -24,8 +25,17 @@ const Blogs = (props) => {
     setFilteredBlogs(result);
   }
 
+  const getSeoData = () => {
+    return {
+      title: 'Blogs - Juan Dela Cruz',
+      description: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+      image: '/assets/images/profile-pic.png'
+    }
+  }
+
   return (
     <div>
+      <Seo data={getSeoData()} />
       <SectionLayout
         title="My Blogs"
         bgColor="#222831"

@@ -2,6 +2,7 @@ import { useRouter } from 'next/dist/client/router';
 import BlogOverview from '../components/BlogOverview/BlogOverview';
 import Button from '../components/Button/Button';
 import SectionLayout from '../components/Layout/Section/SectionLayout';
+import Seo from '../components/SEO/Seo';
 import Services from '../components/Services/Services';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
 import { getBlogs } from '../firebase';
@@ -15,8 +16,17 @@ const Home = (props) => {
     router.push(path);
   }
 
+  const getSeoData = () => {
+    return {
+      title: 'Home - Juan Dela Cruz',
+      description: 'Software Engineer. Team Leader. Web Designer. Writer. Volunteer Speaker.',
+      image: '/assets/images/profile-pic.png'
+    }
+  }
+
   return (
     <>
+      <Seo data={getSeoData()} />
       <div className={classes.header}>
         <div>
           <p className={[classes.paragraph, classes.greet].join(' ')}>

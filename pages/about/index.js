@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import SectionLayout from '../../components/Layout/Section/SectionLayout';
+import Seo from '../../components/SEO/Seo';
 import Skills from '../../components/Skills/Skills';
 import WhatIDo from '../../components/WhatIDo/WhatIDo';
 import { getAboutMe } from '../../firebase';
@@ -16,8 +17,17 @@ const About = (props) => {
     }
   }, []);
 
+  const getSeoData = () => {
+    return {
+      title: 'About - Juan Dela Cruz',
+      description: 'Software Engineer. Team Leader. Web Designer. Writer. Volunteer Speaker.',
+      image: '/assets/images/profile-pic.png'
+    }
+  }
+
   return (
     <>
+      <Seo data={getSeoData()} />
       <div className={classes.header}>
         <div className={classes.headerContent}>
           <div className={classes.headerText}>
